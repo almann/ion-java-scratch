@@ -29,3 +29,12 @@ compileKotlin {
 compileTestKotlin {
     kotlinOptions.jvmTarget = "1.8"
 }
+
+task runCompare(type: JavaExec) {
+    if (project.hasProperty("appArgs")) {
+        args(appArgs.split(','))
+    }
+    description = "Runs IonSpaceCompare"
+    main = "IonSpaceCompareKt"
+    classpath = sourceSets.main.runtimeClasspath
+}
