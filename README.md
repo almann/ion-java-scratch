@@ -11,4 +11,6 @@ $ ./gradlew runCompare -PappArgs=FILE,SST
 ```
 
 ### Notes
-* Gradle/Kotlin with OpenJDK 9 seems to be problematic due to modules, using OpenJDK 8 seems to work better
+* Gradle/Kotlin with OpenJDK 9 may be problematic, OpenJDK 8 works well.
+  * Specifically, the Kotlin/Gradle integration appears to be affected by [JDK-8171377](https://bugs.openjdk.java.net/browse/JDK-8171377).
+    Having a version greater than b150 should resolve this.
